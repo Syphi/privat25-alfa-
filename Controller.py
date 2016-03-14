@@ -5,8 +5,8 @@ class balance:
 
     def balance_plus(self):
         """
-        >>> dp = balance()
-        >>> dp.balance_plus()
+        show our income
+        :return: our income of all our operation
 
         """
         plus = 0
@@ -18,8 +18,9 @@ class balance:
 
     def balance_minus(self):
         """
-        >>> dp = balance()
-        >>> dp.balance_minus()
+
+        show our expenses
+        :return: all our expenses
 
         """
         minus = 0
@@ -30,8 +31,8 @@ class balance:
 
     def balance_difference(self):
         """
-        >>> dp = balance()
-        >>> dp.balance_difference()
+
+        :return: different between our income and expenses
 
         """
         return self.balance_plus()-self.balance_minus()
@@ -40,6 +41,12 @@ class balance:
 class edit:
 
     def edit_all(self, op_id, sign, summary, dd, mm, yy, comment):
+        """
+
+        edit our operation
+        :return:
+
+        """
         edit_method().edit_sign(op_id, sign)
         edit_method().edit_summary(op_id, summary)
         edit_method().edit_dd(op_id, dd)
@@ -51,6 +58,12 @@ class edit:
 class show:
 
     def show_method(self):
+        """
+
+        show to us all our operation
+        :return:
+
+        """
         i = 0
         while i < len(Operation_History):
             print(" Id you'r operation :"+str((i+1)))
