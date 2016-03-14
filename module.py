@@ -1,47 +1,61 @@
 from Controller import *
 
-Operation_0={'sign':'+','summary':200,'dd':16,'mm':01,'yy':2016,'comment':"salary"}
-Operation_1={'sign':'+','summary':35,'dd':8,'mm':03,'yy':2016,'comment':"debt"}
-Operation_2={'sign':'-','summary':1500,'dd':16,'mm':05,'yy':2016,'comment':"B'day"}
+operation_0 = {'sign': '+',
+               'summary': 200,
+               'dd': 16, 'mm': 1, 'yy': 2016,
+               'comment': "salary"}
+operation_1 = {'sign': '+',
+               'summary': 35,
+               'dd': 8, 'mm': 3, 'yy': 2016,
+               'comment': "debt"}
+operation_2 = {'sign': '-',
+               'summary': 1500,
+               'dd': 16, 'mm': 5, 'yy': 2016,
+               'comment': "B'day"}
 
-Operation_History = [Operation_0,Operation_1,Operation_2]
+Operation_History = [operation_0, operation_1, operation_2]
 
-class Create_Method:
 
-    def Create(self,sign,summary,dd,mm,yy,comment):
+class create_method:
+
+    def create(self, sign, summary, dd, mm, yy, comment):
         global Operation_History
-        Operation={'sign':sign,'summary':summary,'dd':dd,'mm':mm,'yy':yy,'comment':comment}
-        Operation_History.append(Operation)
+        operation = {'sign': sign,
+                     'summary': summary,
+                     'dd': dd, 'mm': mm, 'yy': yy,
+                     'comment': comment}
+        Operation_History.append(operation)
 
-class Edit_Method:
 
-    def Edit_sign(self,op_id,sign):
+class edit_method:
+
+    def edit_sign(self, op_id, sign):
         global Operation_History
-        Operation_History[op_id-1]['sign']=sign
+        Operation_History[op_id-1]['sign'] = sign
 
-    def Edit_summary(self,op_id,summary):
+    def edit_summary(self, op_id, summary):
         global Operation_History
-        Operation_History[op_id-1]['summary']=summary
+        Operation_History[op_id-1]['summary'] = summary
 
-    def Edit_dd(self,op_id,dd):
+    def edit_dd(self, op_id, dd):
         global Operation_History
-        Operation_History[op_id-1]['dd']=dd
+        Operation_History[op_id-1]['dd'] = dd
 
-    def Edit_mm(self,op_id,mm):
+    def edit_mm(self, op_id, mm):
         global Operation_History
-        Operation_History[op_id-1]['mm']=mm
+        Operation_History[op_id-1]['mm'] = mm
 
-    def Edit_yy(self,op_id,yy):
+    def edit_yy(self, op_id, yy):
         global Operation_History
-        Operation_History[op_id-1]['yy']=yy
+        Operation_History[op_id-1]['yy'] = yy
 
-    def Edit_comment(self,op_id,comment):
+    def edit_comment(self, op_id, comment):
         global Operation_History
-        Operation_History[op_id-1]['comment']=comment
+        Operation_History[op_id-1]['comment'] = comment
 
 
-class Delete:
+class delete:
 
-    def Delete_operation(self,op_id):
+    def delete_operation(self, op_id):
         global Operation_History
         Operation_History.pop(op_id-1)

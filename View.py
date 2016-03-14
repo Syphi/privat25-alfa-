@@ -1,84 +1,89 @@
 from Controller import *
 
-class Main:
+
+class main:
 
     def show_list(self):
-        print (" 1: Show" + "\n 2:Create Operation" + "\n 3:Delete Operation" + "\n 4:Edit Operation")
-        print (" 5:Positive Balance" + "\n 6:Negative Balance" + "\n 7:Summary Balance" + "\n 8:Exit")
+        show = ' 1: Show'
+        cr_pp = '\n 2:Create Operation'
+        d_op = '\n 3:Delete Operation'
+        e_op = '\n 4:Edit Operation'
+        print(show, cr_pp, d_op, e_op)
+        p_b = " 5:Positive Balance"
+        n_b = "\n 6:Negative Balance"
+        s_b = "\n 7:Summary Balance"
+        e = "\n 8:Exit"
+        print(p_b + n_b + s_b + e)
 
     def menu_create(self):
-        sign1=raw_input("\n Enter you'r sign :")
-        summary2=raw_input(" Enter summary of you'r operation :")
-        dd3=raw_input(" Enter day :")
-        mm4=raw_input(" Enter mounth :")
-        yy5=raw_input(" Enter year :")
-        comment6=raw_input(" Enter comment of you'r operation :")
-        Create_Method().Create(sign1,summary2,dd3,mm4,yy5,comment6)
-        Show().Show_method()
+        sign1 = input("\n Enter you'r sign :")
+        summary2 = input(" Enter summary of you'r operation :")
+        dd3 = input(" Enter day :")
+        mm4 = input(" Enter mounth :")
+        yy5 = input(" Enter year :")
+        comment6 = input(" Enter comment of you'r operation :")
+        create_method().create(sign1, summary2, dd3, mm4, yy5, comment6)
+        show().show_method()
 
     def menu_delete(self):
-        Show().Show_method()
-        op_id=raw_input("\n Enter number of operation what you want to delete :")
-        Delete().Delete_operation(int(op_id))
-        Show().Show_method()
+        show().show_method()
+        op_id = input("\n Enter number of operation what you want to delete :")
+        delete().delete_operation(int(op_id))
+        show().show_method()
 
     def menu_edit(self):
-        Show().Show_method()
-        op_id=int(raw_input(" Enter number of operation what you want to chenge:"))
-        sign1=raw_input(" Enter you'r new sign :")
-        summary2=int(raw_input(" Enter summary of you'r  new operation :"))
-        dd3=int(raw_input(" Enter new day :"))
-        mm4=int(raw_input(" Enter new mounth :"))
-        yy5=int(raw_input(" Enter new year :"))
-        comment6=raw_input(" Enter new comment of you'r operation :")
-        Edit().Edit_all(op_id,sign1,summary2,dd3,mm4,yy5,comment6)
-        Show().Show_method()
+        show().show_method()
+        op_ch = " Enter number of operation what you want to chenge:"
+        op_id = int(input(op_ch))
+        sign1 = input(" Enter you'r new sign :")
+        summary2 = int(input(" Enter summary of you'r  new operation :"))
+        dd3 = int(input(" Enter new day :"))
+        mm4 = int(input(" Enter new mounth :"))
+        yy5 = int(input(" Enter new year :"))
+        comment6 = input(" Enter new comment of you'r operation :")
+        edit().edit_all(op_id, sign1, summary2, dd3, mm4, yy5, comment6)
+        show().show_method()
 
     def menu_balance_plus(self):
-        op_balance=Balance().balance_plus()
-        print ("You'r income =" + str(op_balance))
+        op_balance = balance().balance_plus()
+        print("You'r income =" + str(op_balance))
 
     def menu_balance_minus(self):
-        op_balance=Balance().balance_minus()
-        print ("You'r expenses =" + str(op_balance))
+        op_balance = balance().balance_minus()
+        print("You'r expenses =" + str(op_balance))
 
     def menu_balance_all(self):
-        op_balance=Balance().Balance_Difference()
-        print ("You'r balance = " + str(op_balance))
+        op_balance = balance().balance_difference()
+        print("You'r balance = " + str(op_balance))
 
-
-
-    def Menu(self):
+    def menu(self):
         self.show_list()
-        op=int(raw_input("\n Enter menu numder :"))
-        if op==1 :
-            Show().Show_method()
-            self.Menu()
-        elif op==2 :
+        op = int(input("\n Enter menu numder :"))
+        if op == 1:
+            show().show_method()
+            self.menu()
+        elif op == 2:
             self.menu_create()
-            self.Menu()
-        elif op==3 :
+            self.menu()
+        elif op == 3:
             self.menu_delete()
-            self.Menu()
-        elif op==4 :
+            self.menu()
+        elif op == 4:
             self.menu_edit()
-            self.Menu()
-        elif op==5 :
+            self.menu()
+        elif op == 5:
             self.menu_balance_plus()
-            self.Menu()
-        elif op==6 :
+            self.menu()
+        elif op == 6:
             self.menu_balance_minus()
-            self.Menu()
-        elif op==7 :
+            self.menu()
+        elif op == 7:
             self.menu_balance_all()
-            self.Menu()
-        elif op==8 :
+            self.menu()
+        elif op == 8:
             exit()
         else:
-            print("\n NOT RIGHT NUMBER!")
-            self.Menu()
+            print("\n Not right number!!")
+            self.menu()
 
-Main().Menu()
-
-
-
+main().menu()
