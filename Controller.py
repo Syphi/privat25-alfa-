@@ -1,44 +1,45 @@
 from module import *
+from operation import *
+from viewOperation import *
 
-
-class balance:
+class operation:
 
     def balance_plus(self):
-        """
-        show our income
-        :return: our income of all our operation
-
-        """
-        plus = 0
-        i = 0
-        for i in range(len(Operation_History)):
-            if Operation_History[i]['sign'] == '+':
-                plus += Operation_History[i]['summary']
-        return plus
+        return balance().balance_plus()
 
     def balance_minus(self):
-        """
+       return balance().balance_minus()
 
-        show our expenses
-        :return: all our expenses
+    def difference(self):
+       return balance().balance_difference()
 
-        """
-        minus = 0
-        for i in range(len(Operation_History)):
-            if Operation_History[i]['sign'] == '-':
-                minus += Operation_History[i]['summary']
-        return minus
+class view:
 
-    def balance_difference(self):
-        """
+    def show_list(self):
+        show_list()
 
-        :return: different between our income and expenses
+    def show_method(self):
+        show_method()
 
-        """
-        return self.balance_plus()-self.balance_minus()
+    def create(self):
+        menu_create()
 
+    def delete(self):
+        menu_delete()
 
-class edit:
+    def edit(self):
+        menu_edit()
+
+    def balancePlus(self):
+        menu_balance_plus()
+
+    def balanceMinus(self):
+        menu_balance_minus()
+
+    def balanceAll(self):
+        menu_balance_all()
+
+class database:
 
     def edit_all(self, op_id, sign, summary, dd, mm, yy, comment):
         """
@@ -54,25 +55,8 @@ class edit:
         edit_method().edit_yy(op_id, yy)
         edit_method().edit_comment(op_id, comment)
 
+    def create(self, sign1, summary2, dd3, mm4, yy5, comment6):
+        create_method().create(sign1, summary2, dd3, mm4, yy5, comment6)
 
-class show:
-
-    def show_method(self):
-        """
-
-        show to us all our operation
-        :return:
-
-        """
-        i = 0
-        while i < len(Operation_History):
-            print(" Id you'r operation :"+str((i+1)))
-            print(" Sign you'r operation :"+Operation_History[i]['sign'])
-            Sum = " Summary you'r operation :"
-            print(Sum+str(Operation_History[i]['summary']))
-            print(" Day you'r operation :"+str(Operation_History[i]['dd']))
-            print(" Mounth you'r operation :"+str(Operation_History[i]['mm']))
-            print(" Year you'r operation :"+str(Operation_History[i]['yy']))
-            Com = " Comment to you'r operation :"
-            print(Com+Operation_History[i]['comment']+"\n")
-            i += 1
+    def delete(self, op_id):
+        delete().delete_operation(op_id)
