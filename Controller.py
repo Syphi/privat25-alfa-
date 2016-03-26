@@ -39,7 +39,7 @@ class view:
     def balanceAll(self):
         menu_balance_all()
 
-class database:
+class database():
 
     def edit_all(self, op_id, sign, summary, dd, mm, yy, comment):
         """

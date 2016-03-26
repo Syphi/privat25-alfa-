@@ -22,22 +22,21 @@ def show_method():
             i += 1
 
 def show_list():
-        """
+    """
 
-        show to us main menu
-        :return:
-
-        """
-        shows = ' 1: Show'
-        cr_pp = '\n 2:Create Operation'
-        d_op = '\n 3:Delete Operation'
-        e_op = '\n 4:Edit Operation'
-        print(shows, cr_pp, d_op, e_op)
-        p_b = " 5:Positive Balance"
-        n_b = "\n 6:Negative Balance"
-        s_b = "\n 7:Summary Balance"
-        e = "\n 8:Exit"
-        print(p_b + n_b + s_b + e)
+    show to us main menu
+    :return:
+    """
+    shows = ' 1: Show'
+    cr_pp = '\n 2:Create Operation'
+    d_op = '\n 3:Delete Operation'
+    e_op = '\n 4:Edit Operation'
+    print(shows, cr_pp, d_op, e_op)
+    p_b = " 5:Positive Balance"
+    n_b = "\n 6:Negative Balance"
+    s_b = "\n 7:Summary Balance"
+    e = "\n 8:Exit"
+    print(p_b + n_b + s_b + e)
 
 def menu_create():
         """
@@ -86,7 +85,7 @@ def menu_edit():
         database().edit_all(op_id, sign1, summary2, dd3, mm4, yy5, comment6)
         show_method()
 
-def menu_balance_plus(self):
+def menu_balance_plus():
         """
 
         income of all operation menu
